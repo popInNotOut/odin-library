@@ -20,7 +20,7 @@
             <label for="pages" class="form-label">Pages:</label><br>
             <input class="form-input" type="number" id="pages" name="pages" required><br><br>
             <label for="haveRead" class="form-label">Have you read the book yet? (Type 'yes' or 'no')</label><br>
-            <input class="form-input" type="text" id="haveRead" name="haveRead" required pattern="^[Yy][Ee][Ss]|[Nn][Oo]$"><br><br>
+            <input class="form-input" type="text" id="haveRead" name="haveRead" required pattern="^[Yy][Ee][Ss]|[Nn][Oo]$" oninput="this.value = this.value.trim()"><br><br>
             <button id="submitNewBookDetailsBtn" type="submit">Submit</button>
         </form>
         
