@@ -1,0 +1,53 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, 'Helvetica Neue', Helvetica, 'Liberation Sans', sans-serif;
+    font-size: 14px;
+}
+
+.hidden-form {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    width: 330px;
+}
+
+.form-label {
+    /* This not necessary, all fonts already 1rem by default. Just doing this for personal preference */
+    font-size: 1rem;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+
+.form-input {
+    width: 100%;
+    /* below line is not necessary anymore because this property is already applied globally with *, *::before, *::after selectors */
+    /* box-sizing: border-box; */
+}
+
+.visible-form {
+    display: block;
+}
+
+#book-display-header {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#book-display-grid {
+    margin-top: 5px;
+    padding: 15px;
+    border: 1px solid black;
+    display: grid;
+    width: min(700px, 100%);
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.book-grid-element {
+    border: 1px solid black;
+    font-size: 1.2rem;
+}

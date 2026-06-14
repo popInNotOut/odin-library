@@ -8,6 +8,25 @@
         <title>Odin Library</title>
     </head>
     <body>
+        <!-- Button for adding a new book -->
+        <button id="addNewBookBtn" type="button">Add New Book</button>
+
+        <!-- Hidden form that pops up when the 'Add New Book' button is clicked -->
+        <form id="addNewBookForm" class="hidden-form">
+            <label for="title" class="form-label">Title:</label><br>
+            <input class="form-input" type="text" id="title" name="title" required><br><br>
+            <label for="author" class="form-label">Author:</label><br>
+            <input class="form-input" type="text" id="author" name="author" required><br><br>
+            <label for="pages" class="form-label">Pages:</label><br>
+            <input class="form-input" type="number" id="pages" name="pages" required><br><br>
+            <label for="haveRead" class="form-label">Have you read the book yet? (Type 'yes' or 'no')</label><br>
+            <input class="form-input" type="text" id="haveRead" name="haveRead" required pattern="^[Yy][Ee][Ss]|[Nn][Oo]$"><br><br>
+            <button id="submitNewBookDetailsBtn" type="submit">Submit</button>
+        </form>
         
+        <div id="book-display-header">Library</div>
+        <!-- Grid that displays existing books -->
+        <div id="book-display-grid">
+        </div>
     </body>
 </html>
