@@ -44,7 +44,7 @@ html {
     border: 1px solid black;
     display: grid;
     width: min(700px, 100%);
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
 }
 
@@ -60,6 +60,7 @@ html {
 .book-grid-text-container {
     color: white;
     text-align: center;
-    white-space: pre-line; /* self-note: use pre-wrap if you want multiple spaces to be preserved, here it's better to remove multiple spaces */
+    white-space: pre-line; /* self-note: use pre-wrap if you want multiple spaces to be preserved, here it's better to remove multiple spaces because multiple spaces for book names make no sense */
     margin-bottom: 10px;
+    overflow-wrap: break-word;
 }
