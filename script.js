@@ -86,18 +86,23 @@ function onToggleReadStatusButtonClick(event){
 /******************** Book functions ***********************/
 let myLibrary = [];
 
-function Book(title, author, pages, haveRead){
-    if (!new.target){
-        throw Error("You must use the 'new' operator to call the constructor")
+class Book {
+    constructor(title, author, pages, haveRead){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.haveRead = haveRead;
+        this.id = crypto.randomUUID();
     }
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.haveRead = haveRead;
-    this.id = crypto.randomUUID();
+
+    info(){
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.haveRead ? "read already" : "not read yet"}`;
+    }
+
+    toggleReadStatus(){
+        this.haveRead = !this.haveRead;
+    }
 }
-Book.prototype.info = function(){ return `${this.title} by ${this.author}, ${this.pages} pages, ${this.haveRead ? "read already" : "not read yet"}`; }
-Book.prototype.toggleReadStatus = function() { this.haveRead = !this.haveRead; }
 
 // const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
 // console.log(theHobbit.info());
@@ -113,7 +118,6 @@ addNewBookToEndOfPage();
 console.log(myLibrary[0].info());
 console.log(myLibrary[0].id);
 /***********************************************************/
-
 
 
 
